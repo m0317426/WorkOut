@@ -1,0 +1,26 @@
+<div style="margin-left: 10rem;">
+  <h1>Welkom bij {{workoutPlan.Naam}}</h1>
+  <h3>hopelijk ben je er klaar voor</h3>
+  <br />
+  <h3>{{workoutPlan.Titel}}</h3>
+  <br />
+  <div *ngIf="displayStartButton"><button (click)="start()" class="btn btn-primary">Start oefeningen</button></div>
+  <div *ngIf="displayPauzeButton">
+    <button (click)="reset()" class="btn btn-warning">Reset oefeningen</button>
+  </div>
+  <br />
+  <div *ngIf="displayOefening">
+    <div class="card border-secondary mb-3" style="max-width: 60rem;">
+      <div class="card-header">
+        <h2>{{activeOefening.naam}}</h2>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">{{activeOefening.titel}}</h4>
+        <p class="card-text">{{activeOefening.beschrijving}}</p>
+      </div>
+    </div>
+    <div *ngIf="displayTime">
+      <h1 style="text-align: center;">{{timeLeft}}</h1>
+    </div>
+  </div>
+</div>
